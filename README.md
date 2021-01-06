@@ -19,12 +19,21 @@ prochaine génération permettant de réduire les incertitudes liées aux projec
 La base de données fournie est composée d’images satellitaires comportant 4 types d’organisation de
 nuages nommées : fleur, sable, gravier et poisson.
 
-# II.	Notre approche
+# II.	Approche
 - Prise en main la base de données d’images satellitaires,
 - Etude sur les attributs pertinents à extraire des images,
 - Implémentation des algorithmes de traitement d’images pour l’extraction d’attributs,
 - Implémentation des réseaux convolutifs avec OpenCV et Pytorch pour la classification,
 - Simulation et comparaison des résultats obtenus avec les différents modèles.
 
+
+# III) References
+- [1] Climatology of stratocumulus cloud morphologies: microphysical properties and radiative effects, Atmos. Chem. Phys - 2014
+- [2] Combining crowd-sourcing and deep learning to explore themeso-scale organization of shallow convection , Rasp, Schulz, Bony and Stevens – 2019
+- [3] Focal Loss for Dense Object Detection, Tsung-Yi Lin Priya Goyal Ross Girshick Kaiming He Piotr Dollar, Facebook AI Research (FAIR) - 2018
+
+
+[Pytorch] (https://pytorch.org/tutorials/)
+[OpenCV] (https://missinglink.ai/guides/computer-vision/opencv-deep-learning/)
 
 > Encadrants CentraleSupélec : Jean-Luc Collette et Michel Ianotto
