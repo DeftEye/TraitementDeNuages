@@ -32,8 +32,8 @@ nuages nommées : fleur, sable, gravier et poisson.
 - [2] Combining crowd-sourcing and deep learning to explore themeso-scale organization of shallow convection , Rasp, Schulz, Bony and Stevens – 2019
 - [3] Focal Loss for Dense Object Detection, Tsung-Yi Lin Priya Goyal Ross Girshick Kaiming He Piotr Dollar, Facebook AI Research (FAIR) - 2018
 
-
-[Pytorch link] (https://pytorch.org/tutorials/)
-[OpenCV link] (https://missinglink.ai/guides/computer-vision/opencv-deep-learning/)
+Tutoriels
+[Pytorch link](https://pytorch.org/tutorials/)
+[OpenCV link](https://missinglink.ai/guides/computer-vision/opencv-deep-learning/)
 
 > Encadrants CentraleSupélec : Jean-Luc Collette et Michel Ianotto
