@@ -3,7 +3,7 @@
 ```sh
 https://trello.com/b/S9iGb9xE/nuages-express
 ```
-## I.Contexte
+## I. Contexte
 
 Les nuages peu profonds jouent un rôle important dans la détermination du climat de la terre mais il
 est encore difficile de les intégrer dans les modèles climatiques. Les chercheurs en météorologie et
@@ -28,12 +28,12 @@ nuages nommées : fleur, sable, gravier et poisson.
 
 
 # III) References
-- [1] Climatology of stratocumulus cloud morphologies: microphysical properties and radiative effects, Atmos. Chem. Phys - 2014
-- [2] Combining crowd-sourcing and deep learning to explore themeso-scale organization of shallow convection , Rasp, Schulz, Bony and Stevens – 2019
-- [3] Focal Loss for Dense Object Detection, Tsung-Yi Lin Priya Goyal Ross Girshick Kaiming He Piotr Dollar, Facebook AI Research (FAIR) - 2018
+[1] Climatology of stratocumulus cloud morphologies: microphysical properties and radiative effects, Atmos. Chem. Phys - 2014
+[2] Combining crowd-sourcing and deep learning to explore themeso-scale organization of shallow convection , Rasp, Schulz, Bony and Stevens – 2019
+[3] Focal Loss for Dense Object Detection, Tsung-Yi Lin Priya Goyal Ross Girshick Kaiming He Piotr Dollar, Facebook AI Research (FAIR) - 2018
 
 Tutoriels
-[Pytorch link](https://pytorch.org/tutorials/)
-[OpenCV link](https://missinglink.ai/guides/computer-vision/opencv-deep-learning/)
+[Pytorch ](https://pytorch.org/tutorials/)
+[OpenCV](https://missinglink.ai/guides/computer-vision/opencv-deep-learning/)
 
 > Encadrants CentraleSupélec : Jean-Luc Collette et Michel Ianotto
