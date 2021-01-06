@@ -1,10 +1,19 @@
-# PFE : Analyse de l'organisation des nuages à partir d'images satellites
+PFE : Analyse de l'organisation des nuages à partir d'images satellites
+=========
+Nous organisons notre avancé grace à un tableau  <a href="https://trello.com/b/S9iGb9xE/nuages-express"> Trello </a>.
 
-```sh
-https://trello.com/b/S9iGb9xE/nuages-express
-```
-## I. Contexte
+Vous pouvez également retrouver plus d'informations sur notre projet dans le lien  <a href="https://www.kaggle.com/c/understanding_cloud_organization/discussion/118080"> Kaggle </a>.
 
+Table des matières
+============
+
+<!--ts-->
+   * [Contexte](#contexte)
+   * [Approche](#approche)
+   * [References](#references)
+<!--te-->
+Contexte
+============
 Les nuages peu profonds jouent un rôle important dans la détermination du climat de la terre mais il
 est encore difficile de les intégrer dans les modèles climatiques. Les chercheurs en météorologie et
 climatologie espèrent améliorer la compréhension physique de ces nuages en les classant en différents
@@ -19,7 +28,8 @@ prochaine génération permettant de réduire les incertitudes liées aux projec
 La base de données fournie est composée d’images satellitaires comportant 4 types d’organisation de
 nuages nommées : fleur, sable, gravier et poisson.
 
-# II.	Approche
+Approche
+============
 - Prise en main la base de données d’images satellitaires,
 - Etude sur les attributs pertinents à extraire des images,
 - Implémentation des algorithmes de traitement d’images pour l’extraction d’attributs,
@@ -27,13 +37,17 @@ nuages nommées : fleur, sable, gravier et poisson.
 - Simulation et comparaison des résultats obtenus avec les différents modèles.
 
 
-# III) References
-[1] Climatology of stratocumulus cloud morphologies: microphysical properties and radiative effects, Atmos. Chem. Phys - 2014
-[2] Combining crowd-sourcing and deep learning to explore themeso-scale organization of shallow convection , Rasp, Schulz, Bony and Stevens – 2019
-[3] Focal Loss for Dense Object Detection, Tsung-Yi Lin Priya Goyal Ross Girshick Kaiming He Piotr Dollar, Facebook AI Research (FAIR) - 2018
+References
+============
+- [1] Climatology of stratocumulus cloud morphologies: microphysical properties and radiative effects, Atmos. Chem. Phys - 2014
+- [2] Combining crowd-sourcing and deep learning to explore themeso-scale organization of shallow convection , Rasp, Schulz, Bony and Stevens – 2019
+- [3] Focal Loss for Dense Object Detection, Tsung-Yi Lin Priya Goyal Ross Girshick Kaiming He Piotr Dollar, Facebook AI Research (FAIR) - 2018
+
 
 Tutoriels
-[Pytorch ](https://pytorch.org/tutorials/)
-[OpenCV](https://missinglink.ai/guides/computer-vision/opencv-deep-learning/)
+- [Pytorch ](https://pytorch.org/tutorials/)
+- [OpenCV](https://missinglink.ai/guides/computer-vision/opencv-deep-learning/)
+
+
 
 > Encadrants CentraleSupélec : Jean-Luc Collette et Michel Ianotto
