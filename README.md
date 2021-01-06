@@ -33,7 +33,7 @@ nuages nommées : fleur, sable, gravier et poisson.
 - [3] Focal Loss for Dense Object Detection, Tsung-Yi Lin Priya Goyal Ross Girshick Kaiming He Piotr Dollar, Facebook AI Research (FAIR) - 2018
 
 
-[Pytorch] (https://pytorch.org/tutorials/)
-[OpenCV] (https://missinglink.ai/guides/computer-vision/opencv-deep-learning/)
+[Pytorch link] (https://pytorch.org/tutorials/)
+[OpenCV link] (https://missinglink.ai/guides/computer-vision/opencv-deep-learning/)
 
 > Encadrants CentraleSupélec : Jean-Luc Collette et Michel Ianotto
