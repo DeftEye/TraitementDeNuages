@@ -2,7 +2,7 @@ PFE : Analyse de l'organisation des nuages à partir d'images satellites
 =========
 Nous organisons notre avancé grace à un tableau  <a href="https://trello.com/b/S9iGb9xE/nuages-express"> Trello </a>.
 
-Vous pouvez également retrouver plus d'informations sur notre projet dans le lien  <a href="https://www.kaggle.com/c/understanding_cloud_organization/discussion/118080"> Kaggle </a>.
+Vous pouvez également retrouver plus d'informations sur notre projet dans le lien  <a href="https://www.kaggle.com/c/understanding_cloud_organization/overview"> Kaggle </a>.
 
 Table des matières
 ============
