@@ -42,7 +42,10 @@ References
 - [1] Climatology of stratocumulus cloud morphologies: microphysical properties and radiative effects, Atmos. Chem. Phys - 2014
 - [2] Combining crowd-sourcing and deep learning to explore themeso-scale organization of shallow convection , Rasp, Schulz, Bony and Stevens – 2019
 - [3] Focal Loss for Dense Object Detection, Tsung-Yi Lin Priya Goyal Ross Girshick Kaiming He Piotr Dollar, Facebook AI Research (FAIR) - 2018
-
+- <a href="http://arxiv.org/abs/1611.10012"> [4] </a>  Huang, J., Rathod, V., Sun, C., Zhu, M., Korattikara, A., Fathi, A., … Murphy, K. (2016). Speed/accuracy trade-offs for modern convolutional object detectors. CoRR, abs/1611.10012
+- <a href="https://medium.com/@jonathan_hui/what-do-we-learn-from-single-shot-object-detectors-ssd-yolo-fpn-focal-loss-3888677c5f4d"> [5] </a> Hui, J. (2018). What do we learn from region based object detectors (Faster R-CNN, R-FCN, FPN)
+- <a href="http://arxiv.org/abs/1708.02002"> [6] </a> Lin, T., Goyal, P., Girshick, R. B., He, K., & Dollár, P. (2017). Focal loss for dense object detection
+- <a href="http://arxiv.org/abs/1512.02325"> [7] </a> Liu, W., Anguelov, D., Erhan, D., Szegedy, C., Reed, S. E., Fu, C., & Berg, A. C. (2015). SSD: single shot multibox detector. CoRR, abs/1512.02325
 
 Tutoriels
 - [Pytorch ](https://pytorch.org/tutorials/)
