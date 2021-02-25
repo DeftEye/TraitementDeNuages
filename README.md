@@ -46,6 +46,9 @@ References
 - <a href="https://medium.com/@jonathan_hui/what-do-we-learn-from-single-shot-object-detectors-ssd-yolo-fpn-focal-loss-3888677c5f4d"> [5] </a> Hui, J. (2018). What do we learn from region based object detectors (Faster R-CNN, R-FCN, FPN)
 - <a href="http://arxiv.org/abs/1708.02002"> [6] </a> Lin, T., Goyal, P., Girshick, R. B., He, K., & Dollár, P. (2017). Focal loss for dense object detection
 - <a href="http://arxiv.org/abs/1512.02325"> [7] </a> Liu, W., Anguelov, D., Erhan, D., Szegedy, C., Reed, S. E., Fu, C., & Berg, A. C. (2015). SSD: single shot multibox detector. CoRR, abs/1512.02325
+- <a href="https://github.com/DeftEye/TraitementDeNuages/blob/main/References/Fine_tuning.pdf"> [8] </a> Convolutional Neural Networks for Medical Image
+Analysis: Full Training or Fine Tuning?, Nima Tajbakhsh, Member, IEEE, Jae Y. Shin, Suryakanth R. Gurudu, R. Todd Hurst, Christopher B. Kendall,
+Michael B. Gotway, and Jianming Liang, Senior Member, IEEE, 2017
 
 Tutoriels
 - [Pytorch ](https://pytorch.org/tutorials/)
