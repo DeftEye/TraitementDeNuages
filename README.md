@@ -10,7 +10,7 @@ Table des matières
 <!--ts-->
    * [Contexte](#contexte)
    * [Approche](#approche)
-   * [Entrainement des modèles sur les clusters de CS Metz](GPU)
+   * [Entrainement des modèles sur les clusters de CS Metz](#entrainement-des-modèles-sur-les-clusters-de-cs-metz)
    * [References](#references)
 <!--te-->
 Contexte
@@ -46,7 +46,6 @@ Au préalable :
 
 1) Réserver pour par exemple via uSkynet 100h
 mama@mama-VirtualBox:~$ ./cscluster book -u cpusdi1_34 -c uSkynet -w 100:00
-Affichage : 
 ```
 Reservation successfull 
  Booking requested : OAR_JOB_ID = 112807 
@@ -56,7 +55,6 @@ Reservation successfull
 
 2) Voir la réservation :
 mama@mama-VirtualBox:~$ ./cscluster log -u gpusdi1_34 -c uSkynet
-Affichage : 
 ```Listing your current reservations 
 Job id     Name           User           Submission Date     S Queue
 ---------- -------------- -------------- ------------------- - ----------
@@ -65,7 +63,6 @@ Job id     Name           User           Submission Date     S Queue
 
 3) Se logger sur la réservation :
 mama@mama-VirtualBox:~$ ./cscluster log -u gpusdi1_34 -c uSkynet -j 112807
-Affichage
 ```
 Using OAR 
  Logging to the booked node 
