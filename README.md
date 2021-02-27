@@ -45,7 +45,7 @@ Au préalable :
 - Ici on aura le tutoriel pour l'utilisateur gpusdi1_34, il faut remplacer par l'user désiré
 
 1) Réserver pour par exemple via uSkynet 100h
-mama@mama-VirtualBox:~$ ./cscluster book -u cpusdi1_34 -c uSkynet -w 100:00
+mama@mama-VirtualBox:~$ ./cscluster book -u gpusdi1_34 -c uSkynet -w 100:00
 ```
 Reservation successfull 
  Booking requested : OAR_JOB_ID = 112807 
