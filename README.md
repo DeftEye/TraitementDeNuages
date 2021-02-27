@@ -10,6 +10,7 @@ Table des matières
 <!--ts-->
    * [Contexte](#contexte)
    * [Approche](#approche)
+   * [Entrainement des modèles sur les clusters de CS Metz](GPU)
    * [References](#references)
 <!--te-->
 Contexte
@@ -35,6 +36,61 @@ Approche
 - Implémentation des algorithmes de traitement d’images pour l’extraction d’attributs,
 - Implémentation des réseaux convolutifs avec OpenCV et Pytorch pour la classification,
 - Simulation et comparaison des résultats obtenus avec les différents modèles.
+
+Entrainement des modèles sur les clusters de CS Metz
+============
+Au préalable : 
+- Avoir enregistrer sa clef ssh pour éviter d'avoir à se reconnecter
+- Avoir téléchargerle script" <a href="https://raw.githubusercontent.com/jeremyfix/deeplearning-lectures/master/ClusterScripts/cscluster"> cluster </a> 
+- Ici on aura le tutoriel pour l'utilisateur gpusdi1_34, il faut remplacer par l'user désiré
+
+1) Réserver pour par exemple via uSkynet 100h
+mama@mama-VirtualBox:~$ ./cscluster book -u cpusdi1_34 -c uSkynet -w 100:00
+Affichage : 
+```
+Reservation successfull 
+ Booking requested : OAR_JOB_ID = 112807 
+ Waiting for the reservation 112807 to be running, might last few seconds 
+   The reservation 112807 is not yet running |  
+```
+
+2) Voir la réservation :
+mama@mama-VirtualBox:~$ ./cscluster log -u gpusdi1_34 -c uSkynet
+Affichage : 
+```Listing your current reservations 
+Job id     Name           User           Submission Date     S Queue
+---------- -------------- -------------- ------------------- - ----------
+112807                    gpusdi1_34     2021-02-27 18:57:35 R default  
+```
+
+3) Se logger sur la réservation :
+mama@mama-VirtualBox:~$ ./cscluster log -u gpusdi1_34 -c uSkynet -j 112807
+Affichage
+```
+Using OAR 
+ Logging to the booked node 
+ I am checking if the reservation 112807 is still valid 
+    The reservation 112807 is still running 
+Connect to OAR job 112807 via the node sh11
+gpusdi1_34@sh11:~$ 
+```
+
+4) Utiliser byobu ( voir la <a href="https://doc.ubuntu-fr.org/"> documentation </a>. ): 
+gpusdi1_34@sh11:~$ byobu
+
+5) Entrainer le modele :
+Commande selon action désirée
+
+6) Quitter (en laissant l'entrainement continuer):
+CTRL A+D puis on pourra fermer session, ordinateur ect
+
+7) Pour retourner sur l'entrainement : 
+- Refaire à partir de l'étape 3 en se loggant sur la même réservation
+- Relancher (étape 4) byobu et on aura notre session
+
+Remarque : 
+Finalement , après résultats, ne pas oublier de supprimer sa réservation
+mama@mama-VirtualBox:~$ ./cscluster kill -u gpusdi1_34 -c uSkynet -j 112807
 
 
 References
