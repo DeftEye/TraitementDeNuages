@@ -11,18 +11,16 @@ import pandas as pd
 import numpy as np
 
 
-csv_train_path = './understanding_cloud_organization/train.csv'
+csv_train_path = './understanding_cloud_organization/train_350.csv'
 df = pd.read_csv(csv_train_path)
 
 number = 1
 
-img_name = df.iloc[number][0].split('_')
-print(img_name[0])
-print(img_name)
-img_path = './understanding_cloud_organization/train_images/' + img_name[0]
-encoded = df.iloc[number][1]
-height = 1400
-width = 2100
+img_name = df.iloc[number][0]
+img_path = './understanding_cloud_organization/train_images_350/' + img_name
+encoded = df.iloc[number][2]
+height = 350
+width = 525
 
 def rle2mask(height, width, encoded):
     img = cv2.imread(img_path, cv2.IMREAD_COLOR)
@@ -39,7 +37,7 @@ def rle2mask(height, width, encoded):
         i, j, k = lo // height, lo % height, hi % height
         print(i,j,k)
         for l in range(j-1, k-1):
-            img[l][i] = (0, 0, 255)
+                img[l][i] = (0, 0, 255)
     return img
 
 img = rle2mask(height, width, encoded)
