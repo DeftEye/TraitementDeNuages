@@ -74,16 +74,24 @@ gpusdi1_34@sh11:~$
 
 4) Utiliser byobu ( voir la <a href="https://doc.ubuntu-fr.org/"> documentation </a>. ): 
 gpusdi1_34@sh11:~$ byobu
+Quelques commandes importantes : 
+- F3/F4 pour aller entre fenêtre d'une même session 
+- Shift + flèche droitre/gauche pour naviguer entre split d'une fenêtre
+- Ctrl+Shift+F2 pour une nouvelle session
+- CTRL + F2 pour créer une nouvelle fenêtre verticale / Shift + F2 pour une fenêtre horizontale
+- Alt + fleche du haut ou bas pour naviguer entre sessions
+- CTRL + F6 pour supprimer une fenêtre
 
 5) Entrainer le modele :
 Commande selon action désirée
 
 6) Quitter (en laissant l'entrainement continuer):
-CTRL A+D puis on pourra fermer session, ordinateur ect
+F6
 
 7) Pour retourner sur l'entrainement : 
 - Refaire à partir de l'étape 3 en se loggant sur la même réservation
-- Relancher (étape 4) byobu et on aura notre session
+- Relancher (étape 4) byobu et on aura notre session (à choisir)
+![image](https://user-images.githubusercontent.com/55411197/109397027-db556880-7934-11eb-8457-ef46d6a03fd7.png)
 
 Remarque : 
 Finalement , après résultats, ne pas oublier de supprimer sa réservation
