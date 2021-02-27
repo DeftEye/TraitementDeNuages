@@ -1,24 +1,6 @@
-from pathlib import Path
-from tqdm import tqdm
 import numpy as np
 import pandas as pd
 import math
-import json
-import urllib
-import PIL.Image as Image
-import cv2
-import torch
-import torchvision
-from glob import glob
-from IPython.display import display
-from sklearn.model_selection import train_test_split
-
-import seaborn as sns
-from pylab import rcParams, matplotlib
-import matplotlib.pyplot as plt
-import understanding_cloud_organization
-from understanding_cloud_organization import train_images
-from matplotlib import rc
 
 
 classes = {
@@ -28,12 +10,15 @@ classes = {
     'Sugar': 3
 }
 
-# Dataset train
+# Dataset Choice
 
-csv_train_path = './understanding_cloud_organization/train.csv'
+csv_train_path = './understanding_cloud_organization/train_350.csv'
 df_train = pd.read_csv(csv_train_path)
 
+
 def def_new_df():
+    width = 350
+
     # Ajoute pour le label en mettant 1 ou 0 selon s'il y a ce label
     df_train['Image'] = df_train['Image_Label'].str.extract(r'(^[\s\S]{0,7})')  # 7 premiers caracteres = nom de limage
     df_train['Presence'] = np.where(df_train['EncodedPixels'].notna(), 1, 0)  # presence ou nom du label
@@ -41,15 +26,11 @@ def def_new_df():
     df_train['Classes_index'] = [classes.get(v, None) for v in df_train['Classes']]  # index de la classe
     encodedpix_list = df_train['EncodedPixels'].values.tolist()  # transforme en listes la colonne encodedpixels
 
-    # Plus besoin de la columne exploitée
+    # Plus besoin de la colonne exploitée
     df_train.drop(columns=['Image_Label'], inplace=True)
 
     # Retourne une liste avec des longueur, largeur par bounding box de classe
     count = 0
-    temp = ""
-    longueur_list = []
-    largeur_list = []
-    taille_list = []
     df_train["Longueur"] = np.nan
     df_train["Largeur"] = np.nan
     df_train["Taille"] = np.nan
@@ -86,8 +67,8 @@ def def_new_df():
                         templongmax = encodedpix_list[i][j - 2]
                         tempemplmax = tempempl
                         # taille image de base : 2100*1400
-                        cy = math.ceil(int(tempempl) % 1400 + int(templongmax) / 2)
-                        cx = math.ceil(math.ceil(int(tempempl) / 1400) + int(templarg) / 2)
+                        cy = math.ceil(int(tempempl) % width + int(templongmax) / 2)
+                        cx = math.ceil(math.ceil(int(tempempl) / width) + int(templarg) / 2)
 
                     count = 0
                     templong = encodedpix_list[i][j]
@@ -98,16 +79,16 @@ def def_new_df():
                     templongmax = templong
                     tempemplmax = tempempl
                     tempmult = int(templong) * count
-                    cy = math.ceil(int(tempemplmax) % 1400 + int(templong) / 2)
-                    cx = math.ceil(math.ceil(int(tempemplmax) / 1400) + int(templarg) / 2)
+                    cy = math.ceil(int(tempemplmax) % width + int(templong) / 2)
+                    cx = math.ceil(math.ceil(int(tempemplmax) / width) + int(templarg) / 2)
 
                 if (j == len(encodedpix_list[i]) - 1):
-                    df_train.iloc[i, 5] = templongmax
-                    df_train.iloc[i, 6] = templarg
-                    df_train.iloc[i, 7] = tempmult
-                    df_train.iloc[i, 8] = tempemplmax
-                    df_train.iloc[i, 9] = cx
-                    df_train.iloc[i, 10] = cy
+                    df_train.iloc[i, 7] = templongmax
+                    df_train.iloc[i, 8] = templarg
+                    df_train.iloc[i, 9] = tempmult
+                    df_train.iloc[i, 10] = tempemplmax
+                    df_train.iloc[i, 11] = cx
+                    df_train.iloc[i, 12] = cy
                     count = 0
 
 
@@ -120,12 +101,9 @@ df_train.pop('EncodedPixels')
 df_train.pop('Emplacement_largest')
 
 df_train.groupby('Image')
-df_train.to_csv(path_or_buf= 'test1.csv', index=False)
-# fichier = open("new_csvv2.csv", "a")
-# for item in df_train.to_dict('records'):
-#     fichier.write("%s\n" % item)
-#     fichier.write(",")
-# fichier.close()
+df_train.to_csv(path_or_buf= 'test_5.csv', index=False)
+
+
 
 
 
