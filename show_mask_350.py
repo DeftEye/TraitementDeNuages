@@ -14,7 +14,7 @@ import numpy as np
 csv_train_path = './understanding_cloud_organization/train_350.csv'
 df = pd.read_csv(csv_train_path)
 
-number = 1
+number = 910
 
 img_name = df.iloc[number][0]
 img_path = './understanding_cloud_organization/train_images_350/' + img_name

@@ -14,7 +14,7 @@ import numpy as np
 csv_train_path = './understanding_cloud_organization/train.csv'
 df = pd.read_csv(csv_train_path)
 
-number = 1
+number = 868
 
 img_name = df.iloc[number][0].split('_')
 print(img_name[0])

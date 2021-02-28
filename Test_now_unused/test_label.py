@@ -18,7 +18,7 @@ classes = {
 
 # Dataset train
 
-csv_train_path = 'understanding_cloud_organization/train.csv'
+csv_train_path = '../understanding_cloud_organization/train.csv'
 df_train = pd.read_csv(csv_train_path)
 
 
