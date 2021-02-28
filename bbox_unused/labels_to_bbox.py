@@ -12,7 +12,7 @@ classes = {
 
 # Dataset Choice
 
-csv_train_path = './understanding_cloud_organization/train_350.csv'
+csv_train_path = '../understanding_cloud_organization/train_350.csv'
 df_train = pd.read_csv(csv_train_path)
 
 

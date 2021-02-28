@@ -14,7 +14,7 @@ import numpy as np
 img = cv2.imread('./understanding_cloud_organization/train_images_325/bde641b.jpg', cv2.IMREAD_COLOR)
 
 
-csv_train_path = './understanding_cloud_organization/train_350.csv'
+csv_train_path = '../understanding_cloud_organization/train_350.csv'
 df = pd.read_csv(csv_train_path)
 
 for a in df['annotation']:
