@@ -1,0 +1,4 @@
+from visual import Input_Target_Pair_Generator
+from visual import show_input_target_pair_napari
+gen = Input_Target_Pair_Generator(dataloader_training, rgb=True)
+show_input_target_pair_napari(gen)
