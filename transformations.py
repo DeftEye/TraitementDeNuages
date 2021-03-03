@@ -1,7 +1,5 @@
 import numpy as np
 from skimage.transform import resize
-from sklearn.externals._pilutil import bytescale
-
 
 def create_dense_target(tar: np.ndarray):
     classes = np.unique(tar)
@@ -9,6 +7,7 @@ def create_dense_target(tar: np.ndarray):
     for idx, value in enumerate(classes):
         mask = np.where(tar == value)
         dummy[mask] = idx
+
     return dummy
 
 
@@ -27,7 +26,7 @@ def re_normalize(inp: np.ndarray,
                  high: int = 255
                  ):
     """Normalize the data to a certain range. Default: [0-255]"""
-    inp_out = (inp, low=low, high=high)
+    inp_out = bytescale(inp, low, high)
     return inp_out
 
 
@@ -141,7 +140,7 @@ class Normalize:
         self.std = std
 
     def __call__(self, inp, tar):
-        inp = normalize(inp, mean=self.mean, std=self.std)
+        inp = normalize(inp)
 
         return inp, tar
 

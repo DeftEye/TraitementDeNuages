@@ -283,9 +283,9 @@ class UNet(nn.Module):
     up_mode: 'transposed', 'nearest', 'linear', 'bilinear', 'bicubic', 'trilinear'
     """
     def __init__(self,
-                 in_channels: int = 1,
-                 out_channels: int = 2,
-                 n_blocks: int = 4,
+                 in_channels: int = 3,
+                 out_channels: int = 4,
+                 n_blocks: int = 2,
                  start_filters: int = 32,
                  activation: str = 'relu',
                  normalization: str = 'batch',
