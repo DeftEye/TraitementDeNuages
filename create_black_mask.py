@@ -26,7 +26,7 @@ def create_masked_dataset(height, inpath, df):
 
 
 for input_dir in ['./understanding_cloud_organization/train_images_350']:
-    output_dir = input_dir + '_Black'
+    output_dir = input_dir + '_Blacks'
 
     os.makedirs(output_dir, exist_ok=True)
 

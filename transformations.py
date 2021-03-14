@@ -1,15 +1,31 @@
 import numpy as np
 from skimage.transform import resize
 
+def create_dense_target2(tar: np.ndarray):
+    colors = np.asarray([(255, 0, 0), (0, 0, 255), (0, 255, 0), (0, 110, 255)])
+    colorimg = np.ones((tar.shape[1], tar.shape[2], 3), dtype=np.float32) * 255
+    channels, height, width = tar.shape
+    print(tar.shape)
+
+    for y in range(height):
+        for x in range(width):
+            selected_colors = colors[tar[y,x,:] > 0.5]
+
+        if len(selected_colors) > 0:
+            colorimg[y,x,:] = np.mean(selected_colors, axis=0)
+    return colorimg.astype(np.uint8)
+
+
 def create_dense_target(tar: np.ndarray):
     classes = np.unique(tar)
+    print(tar.shape)
+    print(classes)
     dummy = np.zeros_like(tar)
     for idx, value in enumerate(classes):
         mask = np.where(tar == value)
         dummy[mask] = idx
 
     return dummy
-
 
 def normalize_01(inp: np.ndarray):
     inp_out = (inp - np.min(inp)) / np.ptp(inp)
@@ -20,14 +36,6 @@ def normalize(inp: np.ndarray, mean: float, std: float):
     inp_out = (inp - mean) / std
     return inp_out
 
-
-def re_normalize(inp: np.ndarray,
-                 low: int = 0,
-                 high: int = 255
-                 ):
-    """Normalize the data to a certain range. Default: [0-255]"""
-    inp_out = bytescale(inp, low, high)
-    return inp_out
 
 
 class Compose:
@@ -49,13 +57,13 @@ class Compose:
 class MoveAxis:
     """From [H, W, C] to [C, H, W]"""
 
-    def __init__(self, transform_input: bool = True, transform_target: bool = False):
+    def __init__(self, transform_input: bool = True, transform_target: bool = True):
         self.transform_input = transform_input
         self.transform_target = transform_target
 
     def __call__(self, inp: np.ndarray, tar: np.ndarray):
         if self.transform_input: inp = np.moveaxis(inp, -1, 0)
-        if self.transform_target: tar = np.moveaxis(inp, -1, 0)
+        if self.transform_target: tar = np.moveaxis(tar, -1, 0)
 
         return inp, tar
 
@@ -140,7 +148,7 @@ class Normalize:
         self.std = std
 
     def __call__(self, inp, tar):
-        inp = normalize(inp)
+        inp = normalize(inp, mean=self.mean, std=self.std)
 
         return inp, tar
 
