@@ -42,7 +42,7 @@ class Trainer:
         for i in progressbar:
             """Epoch counter"""
             self.epoch += 1  # epoch counter
-
+            print("fqsfdsqfqsfsqfsfqsfq")
             """Training block"""
             self._train()
 
@@ -74,6 +74,7 @@ class Trainer:
             input, target = x.to(self.device), y.to(self.device)  # send to device (GPU or CPU)
             self.optimizer.zero_grad()  # zerograd the parameters
             out = self.model(input)  # one forward pass
+            print(out)
             loss = self.criterion(out, target)  # calculate loss
             loss_value = loss.item()
             train_losses.append(loss_value)
@@ -83,6 +84,7 @@ class Trainer:
             batch_iter.set_description(f'Training: (loss {loss_value:.4f})')  # update progressbar
 
         self.training_loss.append(np.mean(train_losses))
+        print(self.training_loss)
         self.learning_rate.append(self.optimizer.param_groups[0]['lr'])
 
         batch_iter.close()
