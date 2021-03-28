@@ -41,9 +41,7 @@ class Trainer:
         progressbar = trange(self.epochs, desc='Progress')
         for i in progressbar:
             """Epoch counter"""
-            self.epoch += 1  # epoch counter
-            print("fqsfdsqfqsfsqfsfqsfq")
-            """Training block"""
+            self.epoch += 1  # epoch counter            """Training block"""
             self._train()
 
             """Validation block"""
@@ -74,7 +72,6 @@ class Trainer:
             input, target = x.to(self.device), y.to(self.device)  # send to device (GPU or CPU)
             self.optimizer.zero_grad()  # zerograd the parameters
             out = self.model(input)  # one forward pass
-            print(out)
             loss = self.criterion(out, target)  # calculate loss
             loss_value = loss.item()
             train_losses.append(loss_value)

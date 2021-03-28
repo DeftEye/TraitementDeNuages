@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from skimage.io import imread
 
 def plot_img_array(img_array, ncol=3):
     nrow = len(img_array) // ncol
@@ -30,15 +31,20 @@ def plot_errors(results_dict, title):
 
     plt.show()
 
-def masks_to_colorimg(masks):
-    colors = np.asarray([(255, 0, 0), (0, 0, 255), (0, 255, 0), (0, 110, 255), (0, 232, 20), (23, 23,23)])
+def masks_to_colorimg(masks, haha):
+    colors = np.asarray([(255, 0, 0), (0, 0, 255), (0, 255, 0), (0, 110, 255)])
+    mask = masks
+    if haha == "xD":
+        mask = mask.numpy()
+    mask = np.moveaxis(mask, -1, 0)
+    mask = np.moveaxis(mask, -1, 0)
 
-    colorimg = np.ones((masks.shape[1], masks.shape[2], 3), dtype=np.float32) * 255
-    height, width, channels = masks.shape
+    colorimg = np.zeros((mask.shape[0], mask.shape[1], 3), dtype=np.float32) * 255
+    height, width, channels = mask.shape
 
     for y in range(height):
         for x in range(width):
-            selected_colors = colors[masks[:,y,x] > 0.5]
+            selected_colors = colors[mask[y,x,:] > 0.5]
 
             if len(selected_colors) > 0:
                 colorimg[y,x,:] = np.mean(selected_colors, axis=0)

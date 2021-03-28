@@ -69,7 +69,7 @@ class SegmentationDataSet(data.Dataset):
         self.targets = targets
         self.transform = transform
         self.inputs_dtype = torch.float32
-        self.targets_dtype = torch.long
+        self.targets_dtype = torch.float32
 
     def __len__(self):
         return len(self.inputs)

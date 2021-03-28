@@ -18,13 +18,10 @@ def create_dense_target2(tar: np.ndarray):
 
 def create_dense_target(tar: np.ndarray):
     classes = np.unique(tar)
-    print(tar.shape)
-    print(classes)
     dummy = np.zeros_like(tar)
     for idx, value in enumerate(classes):
         mask = np.where(tar == value)
         dummy[mask] = idx
-
     return dummy
 
 def normalize_01(inp: np.ndarray):
