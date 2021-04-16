@@ -78,14 +78,9 @@ class SegmentationDataSet(data.Dataset):
                     index: int):
         
         shape = (320, 480)
-        
-        # Select the sample
-        input_ID = self.inputs[index]
-        target_ID = self.targets[index]
-        img_name = str(target_ID).split('/')[-1]
 
         # Load input and target
-        x, y = imread(input_ID), make_mask(df, img_name, shape)
+        x, y = self.inputs[index], self.targets[index]
 
         # Preprocessing
         if self.transform is not None:
@@ -95,7 +90,5 @@ class SegmentationDataSet(data.Dataset):
         # Typecasting
         x, y = torch.from_numpy(x).type(self.inputs_dtype), torch.from_numpy(y).type(self.targets_dtype)
         
-        
-
         return x, y
     

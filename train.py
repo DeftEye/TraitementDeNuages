@@ -1,5 +1,11 @@
 import numpy as np
 import torch
+from torch import nn
+import torch.nn.functional as F
+from dice_loss import dice_loss 
+
+
+
 
 
 class Trainer:
@@ -72,6 +78,7 @@ class Trainer:
             input, target = x.to(self.device), y.to(self.device)  # send to device (GPU or CPU)
             self.optimizer.zero_grad()  # zerograd the parameters
             out = self.model(input)  # one forward pass
+           # out = F.sigmoid(out)
             loss = self.criterion(out, target)  # calculate loss
             loss_value = loss.item()
             train_losses.append(loss_value)
